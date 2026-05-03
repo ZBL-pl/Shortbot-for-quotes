@@ -4,7 +4,7 @@ import os
 import random
 import json
 
-with open("quotes.json", "r") as f:
+with open("/home/zbl/Shortbot-for-quotes/quotes.json", "r") as f: #this path works on a raspberry pi
     quotes_list = json.load(f)
 
 load_dotenv()
