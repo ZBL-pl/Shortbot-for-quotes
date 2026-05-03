@@ -3,6 +3,9 @@ from dotenv import load_dotenv
 import os
 import random
 import json
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
 
 with open("/home/zbl/Shortbot-for-quotes/quotes.json", "r") as f: #this path works on a raspberry pi
     quotes_list = json.load(f)
@@ -17,6 +20,10 @@ tree = discord.app_commands.CommandTree(client)
 async def on_ready():
     await tree.sync()
     print(f"logged as {client.user}")
+
+@client.event
+async def on_error(event, *args, **kwargs):
+    print(f'Error in {event}')
 
 @tree.command(name="quote", description="Gives a random Shortcat quote without context.")
 async def quote(interaction: discord.Interaction):
