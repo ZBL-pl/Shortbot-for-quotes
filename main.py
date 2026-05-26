@@ -7,7 +7,7 @@ import logging
 
 logging.basicConfig(level=logging.DEBUG)
 
-with open("/home/zbl/Shortbot-for-quotes/quotes.json", "r") as f: #this path works on a raspberry pi
+with open("quotes.json", "r") as f: #changed directory
     quotes_list = json.load(f)
 
 load_dotenv()
