@@ -29,7 +29,7 @@ async def on_error(event, *args, **kwargs):
 async def quote(interaction: discord.Interaction):
     embed_output = discord.Embed(
         title="Random Shortcat quote",
-        description=f"\"{random.choice(quotes_list)}\"",
+        description=f"{random.choice(quotes_list)}",
         color=discord.Color.from_rgb(231,181,69)
     )
     await interaction.response.send_message(embed=embed_output)
