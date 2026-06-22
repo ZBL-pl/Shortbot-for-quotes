@@ -34,4 +34,4 @@ async def quote(interaction: discord.Interaction):
     )
     await interaction.response.send_message(embed=embed_output)
 
-client.run(token, bot=True)
+client.run(token)
