@@ -27,11 +27,18 @@ async def on_error(event, *args, **kwargs):
 
 @tree.command(name="quote", description="Gives a random Shortcat quote without context.")
 async def quote(interaction: discord.Interaction):
-    embed_output = discord.Embed(
-        title="Random Shortcat quote",
-        description=random.choice(quotes_list),
-        color=discord.Color.from_rgb(231,181,69)
-    )
+    if interaction.user.id == 1400141944818110466 and random.random() > 0.953: #Catterby's ID
+        embed_output = discord.Embed(
+            title="Random Shortcat quote",
+            description="Daisy noises?! That can mean different things to different people",
+            color=discord.Color.from_rgb(231,181,69)
+        )
+    else:
+        embed_output = discord.Embed(
+            title="Random Shortcat quote",
+            description=random.choice(quotes_list),
+            color=discord.Color.from_rgb(231,181,69)
+        )
     await interaction.response.send_message(embed=embed_output)
 
 client.run(token)
